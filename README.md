@@ -13,14 +13,14 @@
 
 ## 📁 Project Structure
 
-/prisma         -> Prisma schema and migrations
-/scripts        -> Utility scripts
-/src
-  ├── controllers   -> Route handlers
-  ├── routes        -> API route definitions
-  ├── services      -> Business logic
-  ├── middlewares   -> Auth, validation, etc.
-  └── utils         -> Utility functions
+/prisma        - Contains the Prisma schema and database migrations  
+/scripts       - Utility scripts for setup and maintenance  
+/src           - Main application source code
+  |_ controllers   - Handles incoming requests
+  |_ routes        - Defines API endpoints
+  |_ services      - Business logic layer
+  |_ middlewares   - Middlewares for auth, validation, etc.
+  |_ utils         - Utility/helper functions
 
 
 ## 🧪 Setup
