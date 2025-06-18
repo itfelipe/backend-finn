@@ -6,7 +6,6 @@ const prisma = new PrismaClient();
 async function main() {
   const userId = 1;
   const categories = await prisma.category.findMany();
-  console.log(categories);
 
   if (categories.length === 0) {
     throw new Error(
@@ -28,7 +27,6 @@ async function main() {
   });
 
   await prisma.budget.createMany({ data: budgets });
-  console.log("💰 Budgets inseridos com sucesso!");
 }
 
 main()

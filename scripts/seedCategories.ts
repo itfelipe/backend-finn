@@ -21,8 +21,6 @@ async function seedCategories() {
       create: { name },
     });
   }
-
-  console.log("Categorias criadas!");
 }
 
 seedCategories().finally(() => prisma.$disconnect());
