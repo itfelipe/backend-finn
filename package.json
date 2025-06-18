@@ -6,7 +6,8 @@
     "dev": "nodemon src/server.js",
     "build": "node src/server.js",
     "prisma": "prisma",
-    "seed:categories": "ts-node scripts/seedCategories.ts"
+    "seed:categories": "ts-node scripts/seedCategories.ts",
+    "seed:budgets": "ts-node scripts/seedBudgets.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
@@ -15,7 +16,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
