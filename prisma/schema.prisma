@@ -49,5 +49,6 @@ model Budget {
   userId     Int
   user       User      @relation(fields: [userId], references: [id])
   limit      Float
+  totalUsed  Float     @default(0)
   month      String
 }

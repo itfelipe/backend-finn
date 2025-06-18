@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Budget" ADD COLUMN     "totalUsed" DOUBLE PRECISION NOT NULL DEFAULT 0;

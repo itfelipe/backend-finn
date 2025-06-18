@@ -1,6 +1,7 @@
 import { Response } from "express";
 import prisma from "../../prisma/client";
 import { AuthRequest } from "../../middlewares/verifyToken";
+import dayjs from "dayjs";
 
 export const createTransaction = async (req: AuthRequest, res: Response) => {
   const { title, amount, type, categoryId } = req.body;
@@ -20,6 +21,23 @@ export const createTransaction = async (req: AuthRequest, res: Response) => {
         userId: Number(req.userId),
       },
     });
+
+    if (type === "saida") {
+      const currentMonth = dayjs().format("YYYY-MM");
+
+      await prisma.budget.updateMany({
+        where: {
+          userId: Number(req.userId),
+          categoryId,
+          month: currentMonth,
+        },
+        data: {
+          totalUsed: {
+            increment: amount,
+          },
+        },
+      });
+    }
 
     res.status(201).json(transaction);
   } catch (error) {
